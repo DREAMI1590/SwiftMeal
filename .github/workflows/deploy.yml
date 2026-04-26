@@ -1,0 +1,29 @@
+name: Deploy SwiftMeal to InfinityFree
+
+on:
+  push:
+    branches:
+      - main  # Pastikan nama branch utama kamu adalah 'main'
+
+jobs:
+  web-deploy:
+    name: 🚀 Deploying SwiftMeal
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 📂 Sync files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        # Kita kirim semua file (index.php, folder assets, backend, dll)
+        local-dir: ./
+        # File dimasukkan ke htdocs agar bisa diakses publik
+        server-dir: ./htdocs/
+        # Mengabaikan file git agar tidak ikut terupload ke hosting
+        exclude: |
+          **/.git*
+          **/.github*
