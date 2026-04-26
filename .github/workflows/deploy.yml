@@ -3,7 +3,7 @@ name: Deploy SwiftMeal to InfinityFree
 on:
   push:
     branches:
-      - main  # Pastikan nama branch utama kamu adalah 'main'
+      - main
 
 jobs:
   web-deploy:
@@ -19,11 +19,10 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        # Kita kirim semua file (index.php, folder assets, backend, dll)
         local-dir: ./
-        # File dimasukkan ke htdocs agar bisa diakses publik
         server-dir: ./htdocs/
-        # Mengabaikan file git agar tidak ikut terupload ke hosting
+        # BAGIAN PENTING: Jangan kirim folder .git agar tidak error
         exclude: |
           **/.git*
           **/.github*
+          **/node_modules*
