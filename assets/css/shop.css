@@ -1,0 +1,356 @@
+/* Geser filter ke kanan */
+.shop-products {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-bottom: 60px;
+    align-items: stretch;
+    flex: 1 1 0;
+}
+
+/* Kartu produk */
+.shop-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 0 0 calc(33.333% - 16px);
+    /* untuk 3 kolom */
+    /* 3 kolom */
+    max-width: 300px;
+    margin: 5px;
+    padding: 16px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px);
+}
+
+.shop-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    max-height: 220px;
+    /* batasi tinggi */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: orange;
+}
+
+.shop-card h4 {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+.price {
+    color: #555;
+    font-size: 15px;
+    font-weight: 550;
+    margin: 10px 0;
+}
+
+/* Tombol beli */
+.btn-buy {
+    background-color: #000;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-buy:hover {
+    opacity: 0.8;
+}
+
+.shop-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 20px;
+}
+
+.filter-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-buttons .btn {
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.filter-buttons .btn.active {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+}
+
+.search-sort {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-sort input[type="text"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.search-sort button {
+    padding: 10px 14px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-sort button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive untuk mobile */
+@media screen and (max-width: 900px) {
+    .shop-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+    .shop-filter {
+        flex: none;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .shop-products-wrapper {
+        flex-direction: column;
+    }
+
+    .shop-products,
+    .shop-sidebar {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .shop-products-wrapper {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+
+/* Filter & Sort */
+.filter-sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 20px;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+#searchInput {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.show {
+    display: block;
+}
+
+.sort-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.sort-button:hover {
+    background-color: #0056b3;
+}
+
+.search-sort-show {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.search-sort-show input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.sort-show {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-family: 'Inter', sans-serif;
+}
+
+.sort-show label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 4px;
+}
+
+.sort-show select {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.sort-show select:hover {
+    border-color: #999;
+    background-color: #f0f0f0;
+}
+
+.sort-show select:focus {
+    outline: none;
+    border-color: #ffa500;
+    box-shadow: 0 0 0 2px rgba(255,165,0,0.3);
+}
+
+/* Baris Sort dan Show */
+.top-bar-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.top-bar-controls select {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Wrapper produk + sidebar */
+.shop-products-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0;
+    min-height: 560px;
+}
+
+/* Sidebar kanan: Search dan Kategori */
+.shop-sidebar {
+    width: 230px;
+    padding: 10px;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.shop-sidebar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.filter-buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filterDiv {
+    display: none;
+}
+
+.filterDiv.show {
+    display: block;
+}
+
+.shop-section {
+    color: #000;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sidebar-category-title {
+    margin-top: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.shop-sidebar .btn{
+    font-size: 16px; /* atau 17px */
+}

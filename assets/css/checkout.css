@@ -1,0 +1,253 @@
+/* Global wrapper dan body */
+body {
+  background-color: #f8f8f8;
+  margin: 0;
+  font-family: sans-serif;
+  color: #000;
+}
+
+.checkout-page-wrapper {
+  max-width: 1280px; /* lebih lega untuk dua kolom */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Layout utama */
+.checkout-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap; /* cegah wrapping */
+  color: #000;
+}
+
+/* Kolom kiri dan kanan */
+.checkout-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkout-right {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Shipping Address Card */
+.address-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.address-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-header h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffa500; /* Warna oranye SwiftMeal */
+}
+
+.change-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.address-title {
+  font-weight: bold;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.address-detail {
+  font-size: 0.9rem;
+}
+
+/* Order Summary */
+.order-summary {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.order-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.order-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #ffa500;
+}
+
+.item-info h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.item-info p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* Back to cart button */
+.back-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #000;
+  transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Payment Methods */
+.payment-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.payment-card h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.payment-detail p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+}
+
+.payment-detail hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.payment-detail .total {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Place Order Button */
+.place-order-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.place-order-btn:hover {
+  background-color: #e69500;
+}
+
+/* Payment Method section */
+.payment-method {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.payment-method label {
+  flex: 1 1 150px;
+  min-width: 120px;
+  max-width: 300px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-method input[type="radio"] {
+  display: none;
+}
+
+.payment-method label:hover {
+  border-color: #ffa500;
+  background-color: #fffaf0;
+}
+
+.payment-method input[type="radio"]:checked + span {
+  color: #ffa500;
+  font-weight: bold;
+  border-bottom: 2px solid #ffa500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+
+  .checkout-right {
+    width: 100%;
+  }
+}
+
+/* Styled select */
+#selected_address {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+#selected_address:focus {
+  border-color: #ffa500;
+  outline: none;
+  background-color: #fff;
+}
+

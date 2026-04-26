@@ -1,0 +1,116 @@
+.promotion-section {
+  padding: 40px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.promo-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 25px;
+}
+
+.promo-tabs .tab {
+  width: 260px; /* Atur panjang tetap untuk semua tab */
+  padding: 22px 30px;
+  border: none;
+  background-color: orange;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.promo-tabs .tab.active {
+  background-color: orange;
+  color: white;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.promo-card {
+  /* background-color dihapus */
+  color: #000;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.promo-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.promo-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Gunakan rasio 16:9 */
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.promo-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.promo-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.promo-label {
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.promo-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+  background-color: orange;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.promo-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-card.hide {
+  display: none;
+}
+
+.promo-empty {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem; /* biar mirip heading tab */
+  color: #000;       /* hitam */
+  margin-top: 20px;
+}
