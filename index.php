@@ -23,7 +23,7 @@ session_start();
     <div class="navbar-top">
       <div class="navbar-title">
         <a href="index.php">
-          <strong>Swift</strong><span style="color: var(--orange);">Ilyassa</span>
+          <strong>Swift</strong><span style="color: var(--orange);">Ilyas</span>
         </a>
       </div>
     </div>
