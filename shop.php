@@ -123,7 +123,7 @@ while ($row = $result->fetch_assoc()) {
             <button class="btn" onclick="filterSelection('hidangan-favorit')">Hidangan Favorit</button>
             <button class="btn" onclick="filterSelection('camilan-gurih')">Camilan Gurih</button>
             <button class="btn" onclick="filterSelection('sajian-lezat')">Sajian Lezat</button>
-            <button class="btn" onclick="filterSelection('minuman-dingin')">Minuman Dingin</button>
+            <button class="btn" onclick="filterSelection('minuman-dingin')">Minuman Hangat</button>
           </div>
         </aside>
       </div>
