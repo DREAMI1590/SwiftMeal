@@ -69,29 +69,7 @@ while ($row = $result->fetch_assoc()) {
     </div>
   </nav>
 
-  <!-- Konten -->
-  <main>
-    <section class="shop-section font-inter">
-
-      <!-- Kontrol Filter dan Sort -->
-      <div class="shop-controls">
-        <div class="search-sort-show">
-          <div class="sort-show">
-            <label for="sortSelect">Sort By</label>
-            <select id="sortSelect" onchange="sortProducts(this.value)">
-              <option value="">Default</option>
-              <option value="az">A-Z</option>
-              <option value="za">Z-A</option>
-            </select>
-            <label for="showSelect">Show</label>
-            <select id="showSelect" onchange="showLimitedProducts(this.value)">
-              <option value="all">Semua</option>
-              <option value="6">6</option>
-              <option value="12">12</option>
-            </select>
-          </div>
-        </div>
-      </div>
+  
 
       <!-- Produk -->
       <div class="shop-products-wrapper">
