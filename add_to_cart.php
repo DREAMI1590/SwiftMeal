@@ -49,7 +49,8 @@ if ($existing_item) {
 
 $_SESSION['flash_message'] = 'Produk berhasil ditambahkan ke keranjang.';
 $_SESSION['flash_type'] = 'success';
-header("Location: https://swiftmeal.42web.io/shop_detail.php?id=$product_id");
+// PERBAIKAN: Gunakan jalur relatif agar fleksibel di server mana pun
+header("Location: shop_detail.php?id=$product_id");
 exit();
 
 
