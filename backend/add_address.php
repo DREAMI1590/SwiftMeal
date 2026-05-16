@@ -12,6 +12,11 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once 'config.php';
 
+// PERBAIKAN: Buat variabel $conn agar sinkron dengan kode di bawahnya
+if (!isset($conn) && isset($database)) {
+    $conn = new mysqli($host, $user, $password, $database);
+}
+
 // Validasi data
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../login.php");
