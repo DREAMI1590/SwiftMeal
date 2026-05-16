@@ -8,6 +8,11 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once 'config.php';
 
+// PERBAIKAN LANGSUNG: Inisialisasi $conn jika belum ada agar sinkron dengan kode di bawah
+if (!isset($conn) && isset($database)) {
+    $conn = new mysqli($host, $user, $password, $database);
+}
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
     exit();
