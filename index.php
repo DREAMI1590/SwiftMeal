@@ -254,12 +254,7 @@ session_start();
         <small style="font-size: 12px; color: #aaa;">
             Pipeline Status: <strong style="color: #2ecc71;">✓ Automated via GitHub Actions</strong><br>
             Server Node: <strong>Production-Biznet-1</strong> | 
-            Last Commit Hash: <span style="color:#3498db; font-family: monospace;">
-                <?php 
-                    $commitHash = trim(shell_exec('git rev-parse --short HEAD'));
-                    echo $commitHash ? $commitHash : '09a497d'; 
-                ?>
-            </span>
+            Last Commit Hash: <span style="color:#3498db; font-family: monospace;">09a497d</span>
         </small>
     </div>
   </footer>
