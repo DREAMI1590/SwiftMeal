@@ -1,10 +1,8 @@
 <?php
+ob_start(); // Menahan output agar session_start dan redirect header tidak error
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-// kode selanjutnya...
-?>
 
-<?php
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
