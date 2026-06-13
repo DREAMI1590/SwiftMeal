@@ -4,18 +4,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-// Koneksi database otomatis (VPS / Hosting Lama)
-if ($_SERVER['SERVER_ADDR'] === '103.127.135.200' || $_SERVER['SERVER_NAME'] === '103.127.135.200') {
-    $host = "localhost";
-    $user = "swiftmeal_user";
-    $password = "SwiftMeal123!";
-    $dbname = "db_swiftmeal";
-} else {
-    $host = "sql211.infinityfree.com";
-    $user = "if0_40042420";
-    $password = "C8apLwQUNqa";
-    $dbname = "if0_40042420_db_swiftmeal";
-}
+// Koneksi database langsung ke container Docker
+$host = "db"; 
+$user = "swiftmeal_user";
+$password = "SwiftMeal123!";
+$dbname = "db_swiftmeal";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 if ($conn->connect_error) {
