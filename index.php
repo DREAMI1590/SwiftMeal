@@ -245,18 +245,6 @@ session_start();
       </div>
     </div>
 
-    <div style="margin-top: 20px; padding: 15px; background: #222; border-radius: 8px; border: 1px solid #333; font-family: sans-serif; text-align: center; color: #fff;">
-        <p style="margin: 0 0 10px 0; font-size: 14px;">Domain: <strong style="color: var(--orange);"><?php echo $_SERVER['HTTP_HOST']; ?></strong> | 
-           Status: <span style="color:#2ecc71">● Terkoneksi ke VPS Biznet</span></p>
-        
-        <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0;">
-        
-        <small style="font-size: 12px; color: #aaa;">
-            Pipeline Status: <strong style="color: #2ecc71;">✓ Automated via GitHub Actions</strong><br>
-            Server Node: <strong>Production-Biznet-1</strong> | 
-            Last Commit Hash: <span style="color:#3498db; font-family: monospace;">09a497d</span>
-        </small>
-    </div>
   </footer>
 
   <!-- Script -->
