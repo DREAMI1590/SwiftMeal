@@ -21,6 +21,8 @@ jobs:
         host: '103.127.135.200'
         username: 'ubuntu'
         key: ${{ secrets.VPS_SSH_KEY }}
+        # Kita tambahkan perintah untuk memastikan git aman dan mereset jika ada konflik
         script: |
           cd /var/www/html
-          sudo git pull origin main
+          git fetch --all
+          git reset --hard origin/main
