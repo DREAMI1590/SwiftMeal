@@ -1,11 +1,8 @@
 <?php
+ob_start(); // Ditambahkan untuk mengamankan proses redirect (header)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
-// kode selanjutnya...
-?>
 
-<?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
