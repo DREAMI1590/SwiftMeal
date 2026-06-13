@@ -1,10 +1,9 @@
 <?php
+ob_start(); // Menahan output agar tidak ada header yang bocor duluan
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-?>
 
-<?php
 require_once('includes/session.php');
 require_once('backend/config.php');
 
@@ -12,8 +11,10 @@ $query = "SELECT * FROM menu ORDER BY id";
 $result = $conn->query($query);
 
 $menu_items = [];
-while ($row = $result->fetch_assoc()) {
-  $menu_items[] = $row;
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+      $menu_items[] = $row;
+    }
 }
 ?>
 
